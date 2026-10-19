@@ -1,0 +1,11 @@
+# Optional: run MongoDB locally. The backend also works WITHOUT Mongo (it falls back to a JSON-file store).
+services:
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - ngdata:/data/db
+volumes:
+  ngdata:
